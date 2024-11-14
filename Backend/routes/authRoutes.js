@@ -1,9 +1,16 @@
 const express = require('express');
 const { registerUser } = require('../controllers/authController');
+const { loginUser } = require('../controllers/authController');
+const { getUserProfile } = require('../controllers/authController');
+const authMiddleware = require('../middleware/authMiddleware');
 const router = express.Router();
 
-// Registeration Route
-
+// Routes
 router.post('/register', registerUser);
+router.post('/login', loginUser);
+router.get('/profile', authMiddleware, getUserProfile);
+router.get('/protected', authMiddleware, (req, res) => {
+    res.status(200).json({ message: `Welcome ${req.user.role}`});
+});
 
 module.exports = router;
