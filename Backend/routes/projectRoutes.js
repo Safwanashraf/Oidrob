@@ -5,4 +5,4 @@ const router = express.Router();
 // Routes
 router.post('/project', authMiddleware);
 
-module.exports = 
+module.exports = router;
