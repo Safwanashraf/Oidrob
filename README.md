@@ -1,4 +1,4 @@
-`UpToDate! - Day 2`
+`UpToDate! - Day 3`
 
 # Oidrob[ Online Task & Project management tool ]
 
@@ -6,7 +6,9 @@ Oidrob is an online tool for managing tasks and projects, helping individuals an
 
 ---
 
-## Features
+## Backend
+
+### **Features**
 
 - **Backend Initialization**: Set up backend with essential dependencies and folder structure.
 - **User Model**: Created a schema for users (username, email, password, role).
@@ -20,9 +22,7 @@ Oidrob is an online tool for managing tasks and projects, helping individuals an
 - **Project and Task Models**: Began creating models for projects and tasks, laying the groundwork for task management.
 - **Rate Limiting on Login Route**: Added rate limiting on the login endpoint to prevent brute-force attacks.
 
----
-
-## Technologies Used
+### **Technologies Used**
 
 - **Node.js**: JavaScript runtime for backend development.
 - **Express.js**: Web framework to set up the backend server and routes.
@@ -36,3 +36,21 @@ Oidrob is an online tool for managing tasks and projects, helping individuals an
 
 ---
 
+## Frontend
+
+### **Features**
+
+- **React Frontend Setup**: Set up React frontend with React Router and Axios.
+- **Login and Register Pages**: Created basic Login and Register pages with form submission.
+- **Authentication Context**: Implemented Context API to manage login/logout globally.
+- **JWT Token Storage**: Configured token storage in localStorage and added redirection after login.
+- **Tailwind CSS**: Integrated Tailwind for styling and updated Login and Register pages with responsive designs.  
+
+### **Technologies Used**
+
+- **React.js**: Frontend library for building user interfaces.
+- **React Router**: Library for handling routing in the frontend.
+- **Axios**: HTTP client for making API requests.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+
+---
