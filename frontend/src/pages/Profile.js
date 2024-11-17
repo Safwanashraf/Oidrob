@@ -1,9 +1,10 @@
+import React from "react";
 
-const profile = () => {
+const Profile = () => {
     return (
-        <div className="text-2xl font-bold text-blue-600">Hello, Tailwind!</div>
+        <div>
+        <h1>Profile</h1>
+        </div>
     )
 }
-
-
-export default profile;
+export default Profile;
