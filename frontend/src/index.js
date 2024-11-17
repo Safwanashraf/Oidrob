@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';  
 import App from './App';  
 import { AuthProvider } from './context/AuthContext'; // Adjust the path as necessary  
+import './input.css';
 
 // Get the DOM element to use as the root for the React app  
 const container = document.getElementById('root');  
