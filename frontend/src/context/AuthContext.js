@@ -17,12 +17,14 @@ export const AuthProvider = ({ children }) => {
         }
     },[]);
 
-    const login = (userData) => {
+    const authenticate = (userData) => {
         setUser(userData);
         localStorage.setItem('token', userData.token);
-        navigate('/');
+        navigate('/')
     };
-
+    
+    const register = (userData) => authenticate(userData);
+    const login = (userData) => authenticate(userData);
     const logout = () => {
         setUser(null);
         localStorage.removeItem('token');
@@ -30,7 +32,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, login, logout }}>
+        <AuthContext.Provider value={{ user, login, logout, register }}>
             { children }
         </AuthContext.Provider>
     );

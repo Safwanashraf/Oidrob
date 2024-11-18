@@ -1,9 +1,9 @@
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import User from '../models/User.js';
 
 // Register a new user
-const registerUser = async (req, res) => {
+export const registerUser = async (req, res) => {
     try {
         const { username, email, password, role } = req.body;
 
@@ -26,6 +26,7 @@ const registerUser = async (req, res) => {
         });
 
         await user.save();
+
         res.status(201).json({ message: 'User registered successfully' });
     } catch (error) {
         res.status(500).json({ message: 'Server error', error: error.message });
@@ -33,19 +34,21 @@ const registerUser = async (req, res) => {
 };
 
 // Login a user
-const loginUser = async (req, res) => {
+export const loginUser = async (req, res) => {
     try {
-        const { username, email, password } = req.body;
+        const { email, password } = req.body;
         
         // Check if the email and password are valid
         const user = await User.findOne({ email });
         if (!user) {
+            console.log('Login failed: user not found: ', email);
             return res.status(400).json({ message: 'Invalid credentials' });
         }
 
         // Compare the password
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
+            console.log('Login failed: Incorrect password for user: ', email);
             return res.status(400).json({ message: 'Invalid credentials'});
         }
 
@@ -56,6 +59,7 @@ const loginUser = async (req, res) => {
             { expiresIn: '1h' }
         );
 
+        // Connect frontend to backend
         res.status(200).json({ token, message: 'Logged in successfully' });
     } catch (error) {
         res.status(500).json({ message: 'Server error', error: error.message });
@@ -63,16 +67,14 @@ const loginUser = async (req, res) => {
 };
 
 // Get a user by ID
-const getUserProfile = async (req, res) => {
-    console.log('chakka manga')
-    console.log(req.user);
-    console.log(req.user.userId);
+export const getUserProfile = async (req, res) => {
     try {
         // Retrieve user by ID from the JWT token payload
         const user = await User.findById(req.user.userId).select('-password');
         if(!user) {
             res.status(404).json({ message: 'User not found' });
         }
+        // Connect frontend to backend
         res.status(200).json(user);
     } catch (error) {
         res.status(500).json({ message: 'Server error', error: error.message });
@@ -80,11 +82,9 @@ const getUserProfile = async (req, res) => {
 };
 
 
-const checkRole = (role) => (req, res, next) => {
+export const checkRole = (role) => (req, res, next) => {
     if(req.user.role !== role) {
         return res.status(403).json({ message: 'Access denied' });
     }
     next();
 };
-
-module.exports = { registerUser, loginUser, getUserProfile, checkRole };

@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const authMiddleware = require('../middleware/authMiddleware');
-const router = express.Router();
+import express from 'express';
+import authMiddleware from '../middleware/authMiddleware';
+import router from express.Router();
 
 // Routes
 router.post('/task', authMiddleware);
