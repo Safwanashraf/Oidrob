@@ -13,9 +13,13 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Basic validation
+        if (!email || !password) {return alert('Please fill in all fields'); };
+
         // Handle login logic here
         try {
             const userData = await loginUser(email, password);
+            console.log('Login success: ', userData);
             // Set user data in context
             login(userData);
         } catch (error) {

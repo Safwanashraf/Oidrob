@@ -1,14 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
+import { register as registerUser } from '../services/authService';
 
 const Register = () => {
+    const { register } = useContext(AuthContext);
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
+
     const [password, setPassword] = useState('');
 
     // Function to handle form submission
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+    
+        // Basic validation  
+        if (!username || !email || !password) {return alert('All fields are required'); };  
+
         // Handle registration logic here
+        try {
+            const userData = await registerUser (username, email, password);
+            console.log('Registration succss: ', userData);
+            // Set user data in context
+            register(userData);
+        } catch (error) {
+            console.log('catch error');
+            console.error('Registration failed:', error);
+        }
     };
 
     return (

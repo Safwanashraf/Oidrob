@@ -1,11 +1,10 @@
 import React from 'react';  
 import { createRoot } from 'react-dom/client';  
 import { BrowserRouter as Router } from 'react-router-dom';
-// import { createBrowserRouter } from 'react-router-dom';
 import App from './App';  
 import { AuthProvider } from './context/AuthContext'; // Adjust the path as necessary  
 import './input.css';
-
+// import { createBrowserRouter } from 'react-router-dom';
 
 // Enable future flags for React Router
 // const router = createBrowserRouter(routes, {
@@ -16,11 +15,11 @@ import './input.css';
 // });
 
 // Get the DOM element to use as the root for the React app  
+
 const container = document.getElementById('root');  
 
 // Create a root.  
-const root = createRoot(container);  
-
+const root = createRoot(container); 
 
 // Render your app wrapped in Router and AuthProvider for context management  
 root.render(  

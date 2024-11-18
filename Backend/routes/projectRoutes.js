@@ -1,7 +1,6 @@
-const express = require('express');
-const authMiddleware = require('../middleware/authMiddleware');
-const router = express.Router();
-
+import express from 'express';
+import authMiddleware from '../middleware/authMiddleware';
+import router from express.Router();
 // Routes
 router.post('/project', authMiddleware);
 

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // Define Project Schema
 const projectSchema = new mongoose.Schema({

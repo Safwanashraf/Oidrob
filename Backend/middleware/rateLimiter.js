@@ -1,4 +1,4 @@
-const rateLimit = require('express-rate-limit');
+import rateLimit from 'express-rate-limit';
 
 // Define rate limit options for login endpoint
 const loginLimiter = rateLimit({
@@ -11,4 +11,4 @@ const loginLimiter = rateLimit({
     }
 });
 
-module.exports = loginLimiter;
+export default loginLimiter;
