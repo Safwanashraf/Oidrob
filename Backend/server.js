@@ -30,26 +30,3 @@ app.use('/api/auth', authRoutes);
 app.get('/',(req, res)=>{
     res.send('Backend server is running');
 });
-
-
-// app.post('/register', (req, res) => {
-//     // Registration logic here
-//    res.status(200).send('User registered successfully');
-// });
-// app.post('/login', (req, res) => {
-//     // Login logic here
-//     res.status(200).send('User logged in successfully');
-// })
-
-// Connect to MongoDB
-
-// mongoose.connect(process.env.MONGODB_URI)
-// .then(() => {
-//     console.log('Connected to MongoDB');
-//     app.listen(PORT, () => {
-//         console.log(`Server is running on ${PORT}`);
-//     });
-// })
-// .catch((error) => {
-//     console.error('MongoDB connection error:', error)
-// })
