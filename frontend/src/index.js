@@ -1,9 +1,10 @@
 import React from 'react';  
 import { createRoot } from 'react-dom/client';  
 import { BrowserRouter as Router } from 'react-router-dom';
-import App from './App';  
 import { AuthProvider } from './context/AuthContext'; // Adjust the path as necessary  
-import './input.css';
+import './styles/index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 // import { createBrowserRouter } from 'react-router-dom';
 
 // Enable future flags for React Router
@@ -14,14 +15,9 @@ import './input.css';
 //  },
 // });
 
-// Get the DOM element to use as the root for the React app  
-
 const container = document.getElementById('root');  
-
-// Create a root.  
 const root = createRoot(container); 
 
-// Render your app wrapped in Router and AuthProvider for context management  
 root.render(  
   <React.StrictMode>  
     <Router>  
@@ -31,3 +27,6 @@ root.render(
     </Router>  
   </React.StrictMode>  
 );
+
+// Optional: Log results or send to an analytics endpoint  
+reportWebVitals(console.log);  

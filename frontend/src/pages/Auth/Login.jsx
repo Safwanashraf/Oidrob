@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
-import { useAuth } from '../context/AuthContext';
-import { login as loginUser } from '../services/authService';
+import React, { useState } from 'react';
+import { useAuth } from '../../context/AuthContext';
+import { login as loginUser } from '../../api/userService';
 
 
 // Creating useState for email & password
@@ -8,7 +8,6 @@ const Login = () => {
     const { login } = useAuth(); // Access the login function from AuthContext
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
 
     // Function to handle form submission
     const handleSubmit = async (e) => {
@@ -22,7 +21,7 @@ const Login = () => {
             const userData = await loginUser(email, password);
             console.log('Login success: ', userData);
             // Set user data in context
-            login({ token: response.token, email });
+            login({ token: userData.token, email });
         } catch (error) {
             console.error('Failed to login');
         }
