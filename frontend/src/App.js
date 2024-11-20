@@ -1,22 +1,13 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
-import Profile from './pages/Profile';
-import './input.css';
+import React from "react";
+import Routes from "./routes/routes";
+import './styles/index.css';
 
-function App() {
+function App () {
   return (
-
-      <Routes>
-        <Route path='/' element={<Dashboard />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/profile' element={<Profile />} />
-      </Routes>
-
-  )
-}
+    <div>
+      <Routes />
+    </div>
+  );
+};
 
 export default App;

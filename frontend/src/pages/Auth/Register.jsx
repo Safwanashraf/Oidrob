@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
-import { AuthContext } from '../context/AuthContext';
-import { register as registerUser } from '../services/authService';
+import { AuthContext } from '../../context/AuthContext';
+import { register as registerUser } from '../../api/userService';
 
 const Register = () => {
     const { register } = useContext(AuthContext);
