@@ -29,7 +29,7 @@ const SidebarOrganization = () => {
             <div class='p-3 w-4 h-4 rounded-full bg-white' />
             <h1 className='ml-2 text-center font-sans font-normal text-white text-[14px] leading-[21px]'>My Work</h1>
           </div>
-          <Dropdown titleComponent={Teams}>
+          <Dropdown titleComponent={Teams} >
             <div className='flex flex-col'>
               <Link className='p-2 pl-4 whitespace-nowrap hover:bg-custom-b-f hover:rounded-md font-sans font-normal text-white text-[14px] leading-[21px]'>
                 Marketing
@@ -42,7 +42,7 @@ const SidebarOrganization = () => {
               </Link>
             </div>
           </Dropdown>
-          <Dropdown titleComponent={Projects}>
+          <Dropdown titleComponent={Projects} >
             <div className='flex flex-col'>
               <Link className='p-2 pl-4 whitespace-nowrap  hover:bg-custom-b-f hover:rounded-md font-sans font-normal text-white text-[14px] leading-[21px]'>
                 Blog Post
