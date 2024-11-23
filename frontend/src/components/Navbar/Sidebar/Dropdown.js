@@ -17,7 +17,7 @@ const Dropdown = ({ titleComponent, children }) => {
             <div>  
                 <button  
                     onClick={toggleDropdown}  
-                    className="w-full hover:bg-custom-b-f hover:rounded-md flex items-center "  
+                    className="w-full pl-2 hover:bg-custom-b-f hover:rounded-md flex items-center "  
                     id="menu-button"  
                     aria-expanded={isOpen}  
                     aria-haspopup="true"  
