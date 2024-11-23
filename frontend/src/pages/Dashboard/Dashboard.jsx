@@ -7,7 +7,7 @@ import TaskTable from '../../components/TaskTable/TaskTable';
 
 const Dashboard = () => {
   return (
-    <div className='bg-gray-100'>
+    <div className='bg-black'>
       <div className='dashboard-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {/* if(role===user){
           <SidebarUsers />
