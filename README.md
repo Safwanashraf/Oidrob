@@ -1,5 +1,3 @@
-`UpToDate! - Day 9`
-
 # Oidrob[ Online Task & Project management tool ]
 
 Oidrob is an online tool for managing tasks and projects, helping individuals and teams stay organized and efficient. It provides a central platform to track tasks, set deadlines, manage projects, and collaborate, making it easier to streamline work and boost productivity.
