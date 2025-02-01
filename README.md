@@ -54,7 +54,7 @@ Oidrob is an online tool for managing tasks and projects, helping individuals an
 - **Mongoose**: ODM for managing MongoDB schemas and relationships.
 - **jsonwebtoken (JWT)**: For secure authentication and role-based authorization.
 - **express-rate-limit**: To prevent brute-force attacks.
-- **dotenv**: For secure environment variable management.
+- **dot env**: For secure environment variable management.
 - **CORS**: For enabling cross-origin requests between frontend and backend.
 
 ### **Additional Tools**:
@@ -75,4 +75,3 @@ Oidrob is an online tool for managing tasks and projects, helping individuals an
 - Ensuring components are reusable and maintainable for future enhancements.
 
 ----
-
